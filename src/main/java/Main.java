@@ -112,7 +112,7 @@ public class Main {
         for (String s : list)
             System.out.println(s);
 
-    List<String> l = List.of("Ala" , "ma", "kota");
+        List<String> l = List.of("Ala" , "ma", "kota");
 
 List<String> words2 = new ArrayList<>(Arrays.asList("Abc" , "abc" , "Kota", "a"));
 // metoda zwracająca wyrazy dłuższe niz 3 znaki
