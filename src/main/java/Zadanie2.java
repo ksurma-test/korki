@@ -1,3 +1,4 @@
+import javax.swing.text.html.parser.Parser;
 import java.util.List;
 
 public class Zadanie2 {
@@ -13,6 +14,15 @@ public class Zadanie2 {
         System.out.println(remove("TekstX maX dziesiećX znaków" , 'X'));
         System.out.println("Zadanie 4 wersja  z Replace");
         System.out.println(removeWithReplace("TekstX maX pięćX znaków", 'X'));
+        System.out.println("Zadanie 6");
+        System.out.println(countSubstrings("helloalamakotahelloalamakotahello" , "hello"));
+        System.out.println("Zadanie 6 wersja 2");
+        System.out.println(countSubstrings2("hello alla , hello tomasz" , "hello"));
+        System.out.println("Zadanie 7");
+        System.out.println(isAnagram("kamil" , "limaa"));
+        System.out.println("Zadanie 9 nie całe ");
+        digitsInString("Kamil123");
+
     }
 
 
@@ -75,6 +85,59 @@ public static String firstHalf(String s) {
 
     }
 
+//Zadanie 6
+public static int countSubstrings(String s, String substring) {
+        return s.split(substring,-1).length-1;
+}
+
+    //Zadanie 6 wersja 2
+public static int countSubstrings2(String s, String substring) {
+
+int count =0;
+int lastIndex =0;
+
+    while (lastIndex !=-1 )
+    {
+    lastIndex = s.indexOf(substring , lastIndex);
+    if(lastIndex != -1) {
+        count++;
+        lastIndex += substring.length();
+
+    }
+}return count;
+    }
+
+    // Zadanie 7
+
+    public static boolean isAnagram(String s1 , String s2){
+
+        if (s1.length() != s2.length()) {
+            return false;
+        }
+
+        for(int i = 0; i < s2.length(); i++) {
+
+            if( !s1.contains("" + s2.charAt(i))) {
+                return false;
+            }
+
+            s1 = s1.replaceFirst("" + s2.charAt(i), "");
+            s2 = s2.replaceFirst("" + s2.charAt(i), "");
+        }
+        return true;
+    }
+
+// Zadanie 9
+
+public static void digitsInString(String s ) {
+          for (int i=0 ; i < s.length() ; i++) {
+            char c = s.charAt(i);
+         if(Character.isDigit(c))  {
+             System.out.println(c);
+         }
+    }
+
+}
 
 }
 
