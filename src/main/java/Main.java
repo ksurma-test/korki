@@ -121,6 +121,7 @@ List<String> words2 = new ArrayList<>(Arrays.asList("Abc" , "abc" , "Kota", "a")
         System.out.println(countUpperCaseCharList(words2));
     }
 
+
     public static int coutLongerThan(List<String> list , int n) {
         int counter=0;
         for (String s: list) {
