@@ -179,10 +179,3 @@ public class Zadanie1 {
        }
     }
 }
-
-
-
-
-
-
-

@@ -21,7 +21,7 @@ public class Zadanie2 {
         System.out.println("Zadanie 7");
         System.out.println(isAnagram("kamil" , "limaa"));
         System.out.println("Zadanie 9 nie całe ");
-        digitsInString("Kamil123");
+        System.out.println(digitsInString("Kamil123"));
 
     }
 
@@ -49,9 +49,7 @@ public static String firstHalf(String s) {
 
 }
 
-
    // Zadanie 3
-
 
     public static int countUpperCase(String s){
         int counter=0;
@@ -129,13 +127,14 @@ int lastIndex =0;
 
 // Zadanie 9
 
-public static void digitsInString(String s ) {
-          for (int i=0 ; i < s.length() ; i++) {
-            char c = s.charAt(i);
+public static int digitsInString(String s ) {
+    char c = s.charAt(0);
+        for (int i=0 ; i < s.length() ; i++) {
+            c = s.charAt(i);
          if(Character.isDigit(c))  {
              System.out.println(c);
          }
-    }
+    }return  c;
 
 }
 
