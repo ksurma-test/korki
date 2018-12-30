@@ -21,7 +21,7 @@ public class Zadanie2 {
         System.out.println("Zadanie 7");
         System.out.println(isAnagram("kamil" , "limaa"));
         System.out.println("Zadanie 9 nie całe ");
-        System.out.println(digitsInString("Kamil123"));
+        digitsInString("Kamil123");
 
     }
 
@@ -125,16 +125,16 @@ int lastIndex =0;
         return true;
     }
 
-// Zadanie 9
+// Zadanie 9 niepełnne nie wiem jak pomnożyć cyfry
 
-public static int digitsInString(String s ) {
+public static void digitsInString(String s ) {
     char c = s.charAt(0);
         for (int i=0 ; i < s.length() ; i++) {
             c = s.charAt(i);
          if(Character.isDigit(c))  {
              System.out.println(c);
          }
-    }return  c;
+    }
 
 }
 

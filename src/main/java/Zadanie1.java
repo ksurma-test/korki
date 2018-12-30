@@ -169,13 +169,4 @@ public class Zadanie1 {
 
 
 
-    // Zadanie 9
-
-
-    public static void sumDigit(String s ) {
-       for (int i = 0; i <s.length() ; i++) {
-           int suma  = s.charAt(i);
-           suma += suma;
-       }
-    }
 }
