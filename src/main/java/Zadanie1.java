@@ -31,6 +31,13 @@ public class Zadanie1 {
         System.out.println(minForEach(new int[]{50,60,33,-22,100}  ));
         System.out.println(lognestWord("Ala ma pięknego psa i krokodyla"));
         System.out.println(countSentences("To ja. Kamil się nazwyam. Mieszkam w Warszawie."));
+        System.out.println("Zadanie 9");
+        System.out.println(sumDigits("Kamil123"));
+        System.out.println("Zadanie 7");
+        System.out.println(maxCharInString("Kamil aaa ma eeeeeeeee"));
+        System.out.println("Zadanie 10");
+        System.out.println(sameEnds("AAAKamil" , "Kamila" , 3));
+
     }
 
 
@@ -121,6 +128,53 @@ public class Zadanie1 {
         return max;
     }
 
+    // Zadanie 7
+
+    public static char maxCharInString(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        for (char c : s.toCharArray()) {
+            if (map.containsKey(c)) {
+                map.put(c, map.get(c) + 1);
+            } else {
+                map.put(c, 1);
+            }
+        }
+
+        char c= ' ';
+        int repetitions = 0;
+
+        for (Map.Entry<Character, Integer> e : map.entrySet()) {
+            if (e.getValue() > repetitions) {
+
+                repetitions = e.getValue();
+                c = e.getKey();
+            }
+        }
+        return c;
+    }
+
+
+
+    // Zadanie 9
+
+    public static int sumDigits(String s ) {
+        char c;
+        int value=0;
+        for (int i=0 ; i < s.length() ; i++) {
+            c = s.charAt(i);
+            if(Character.isDigit(c))  {
+                value += Character.getNumericValue(c);
+            }
+        }
+        return value;
+    }
+
+
+    // Zadanie 10
+    public static boolean sameEnds(String a , String b , int lenght) {
+        return a.substring(a.length() -1 - lenght).equals(b.substring(b.length()-1 - lenght));
+    }
+
     public static int minFori (int[] array) {
         int min=array[0];
         for (int i = 1; i < array.length; i++) {
@@ -159,12 +213,23 @@ public class Zadanie1 {
         }
         return min;
     }
+
     public static void set() {
 
         Set<String> values  = new HashSet<>();
+    }
+    public static int sumDigits(int i ) {
+        int suma = 0;
+        while (i>0){
 
+            suma+=i % 10;
+            i /= 10;
+        }
 
+        return suma;
 
     }
+
+
 
 }

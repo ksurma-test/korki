@@ -22,6 +22,8 @@ public class Zadanie2 {
         System.out.println(isAnagram("kamil" , "limaa"));
         System.out.println("Zadanie 9");
         System.out.println(digitsInString("Kamil123"));
+        System.out.println("Zadanie 10");
+        System.out.println(length(1));
 
     }
 
@@ -32,11 +34,7 @@ public class Zadanie2 {
 public static boolean endWith(String s , String substring) {
        int sizeString =  s.length();
        int sizeSubstring= substring.length();
-       if (s.substring(sizeString - sizeSubstring).equals(substring)){
-           return true;
-       }else {
-           return false;
-       }
+       return s.substring(sizeString - sizeSubstring).equals(substring);
 }
 
 // Zadanie 2
@@ -54,12 +52,14 @@ public static String firstHalf(String s) {
     public static int countUpperCase(String s){
         int counter=0;
          for (char c: s.toCharArray()) {
-                if(Character.isUpperCase(c)){
-                    counter++;
+             if(Character.isUpperCase(c)){
+                 counter++;
                     //  counter += Character.isUpperCase(c) ? 1:0;
-                }
-            } return counter;
-        }
+             }
+         }
+
+         return counter;
+    }
 
 
         // Zadanie 4
@@ -85,7 +85,7 @@ public static String firstHalf(String s) {
 
 //Zadanie 6
 public static int countSubstrings(String s, String substring) {
-        return s.split(substring,-1).length-1;
+        return s.split(substring).length;
 }
 
     //Zadanie 6 wersja 2
@@ -125,18 +125,30 @@ int lastIndex =0;
         return true;
     }
 
-// Zadanie 9 niepełnne nie wiem jak pomnożyć cyfry
+// Zadanie 9
 
 public static int digitsInString(String s ) {
-    char c;
-    int value=1;
+        char c;
+        int value=1;
         for (int i=0 ; i < s.length() ; i++) {
             c = s.charAt(i);
-         if(Character.isDigit(c))  {
-             value *= Character.getNumericValue(c);
-         }
+            if(Character.isDigit(c))  {
+                value *= Character.getNumericValue(c);
+            }
+        }
+        return value;
     }
-return value;
+
+    // Zadanie 10
+
+public static int length(int i) {
+ int count=0;
+  while (i!=0) {
+      i/=10;
+              count++;
+  }
+
+return count;
 }
 
 }
