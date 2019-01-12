@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -33,6 +31,12 @@ public class Lekcja4 {
 
         countWords();
 
+        BufferedWriter bw = new BufferedWriter(new FileWriter("example.txt", true));
+
+        bw.append("jakis tekst")
+                .append("\r\n")
+                .flush();
+        bw.close();
     }
 
     public static int sumOfDividers(int n) {
@@ -78,5 +82,8 @@ public class Lekcja4 {
             System.out.println(k + "wystąpiło " + v + "razy");
         });
     }
+
+
+
 
 }
